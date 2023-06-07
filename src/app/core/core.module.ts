@@ -6,13 +6,12 @@ import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
   declarations: [
-   
-  
-    HeaderComponent,
+           HeaderComponent,
            AsideComponent
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[HeaderComponent,AsideComponent]
 })
 export class CoreModule { }

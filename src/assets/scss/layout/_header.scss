@@ -1,0 +1,22 @@
+header {
+  height: 60px;
+  .row {
+    .profile-image {
+      width: 30px;
+      height: 30px;
+    }
+    .profile2 {
+      margin-left: -10px;
+    }
+    .navbar {
+      .nav-item:not(.icon-active):hover {
+        color: hsl(69.66deg 97.39% 70%) !important;
+      }
+      .icon-active {
+        padding: 15px;
+        border: 2px solid red;
+        border-color: hsl(69.66deg 97.39% 70%) !important ;
+      }
+    }
+  }
+}

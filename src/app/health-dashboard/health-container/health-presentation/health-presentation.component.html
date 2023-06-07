@@ -1,1 +1,11 @@
-<p>health-presentation works!</p>
+
+<div class="p-1">
+    <table class="table mt-4 text-white"  >
+        <tbody>
+          <tr *ngFor="let item of healthData">
+            <th scope="row" class="text-white">{{item.healthTitle}}</th>
+            <td>{{item.healthDescription}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
