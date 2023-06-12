@@ -6,17 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() title:string;
-  @Input() fullScreen!:boolean;
-  @Input() setting!:boolean;
-  @Input() tableShow!:boolean;
-  @Input() data:any;
-  constructor(){
-    this.title='';
-   
-    
+  @Input() title: string;
+  @Input() fullScreen!: boolean;
+  @Input() setting!: boolean;
+  @Input() tableShow!: boolean;
+  @Input() data: any;
+  constructor() {
+    this.title = '';
   }
   ngOnInit(): void {
-    console.log(this.data);
   }
 }

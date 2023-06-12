@@ -1,16 +1,58 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     height: 100%;
     width: 100%;
 }
-body{
+
+body {
     overflow: hidden;
+    font-family: $font-family;
 }
+
 // helper class
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
+}
+
+// root style
+:root {
+    --primary-bg-color: white;
+    --secondary-bg-color: white;
+    --primary-color: hsl(69.66deg 97.39% 70%);
+    --hover-color: red,
+        --secondary-color: grey;
+    --border: 2px solid #dfe8f1;
+    --border-head: #dfe8f1;
+    --text-color: black;
+}
+
+.dark-mode {
+    --primary-bg-color: #101422;
+    --secondary-bg-color: black;
+    --primary-color: hsl(342, 97%, 70%);
+    --secondary-color: rgb(170, 170, 170);
+    --hover-color: hsl(69.66deg 97.39% 70%),
+        --border: 2px solid #363947;
+    --border-head: #363947;
+    --text-color: white;
+}
+
+.bg-color {
+    background-color: var(--primary-bg-color);
+}
+
+.bg-black-color {
+    background-color: var(--secondary-bg-color);
+}
+
+.text-white-color {
+    color: var(--text-color);
 }

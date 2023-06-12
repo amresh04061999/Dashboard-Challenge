@@ -13,8 +13,26 @@ export class ProgressPresentationComponent implements OnInit {
   private chart!: any;
   constructor() {
   }
+  
   ngOnInit(): void {
-    Chart.register(ChartDataLabels);
+    const labelsMargin = {
+      id: 'labelMargin',
+      afterDatasetsDraw(chart: any) {
+        const { ctx, data } = chart;
+        ctx.save();
+        data.datasets[0].data.forEach((dataPoint: any, index: any) => {
+          const { y } = chart.getDatasetMeta(0).data[index].tooltipPosition();
+          ctx.font = "normal 16px sans-serif";
+          ctx.fillStyle = data.datasets[0].backgroundColor[index];
+          (ctx.textAlign = "right"), (ctx.textBaseline = "middle");
+          if (dataPoint > 0 && dataPoint < 1) {
+            dataPoint = 0;
+          }
+          ctx.fillText(dataPoint + "%", 150, y);
+        });
+      },
+    }
+    
     const progressChart = document.getElementById('Progress') as HTMLCanvasElement;
     this.chart = new Chart(progressChart, {
       type: 'bar',
@@ -22,11 +40,9 @@ export class ProgressPresentationComponent implements OnInit {
         labels: ['Contracts', 'Design', 'Procurement', 'Construction', 'Post Const...', 'Project Clo...'],
         datasets: [
           {
-            data: [
-              100, 80, 19, 0.5, 0.5, 0.5
-            ],
+            data: [100, 80, 19, 0.5, 0.5, 0.5],
             backgroundColor: ['#6acb6d', '#67cb6c', '#df5a9d', '#7f848e', '#7f848e', '#7f848e'],
-            borderWidth: 0
+            barThickness:18
           },
         ],
       },
@@ -36,11 +52,12 @@ export class ProgressPresentationComponent implements OnInit {
         responsive: true,
         plugins: {
           datalabels:{
-                   align:'start'
+            display:false
           },
           legend: {
             display: false,
           },
+          
         },
         scales: {
           y: {
@@ -49,8 +66,8 @@ export class ProgressPresentationComponent implements OnInit {
             },
             ticks: {
               crossAlign: 'far',
-              padding: 20,
-              color: 'white',
+              padding: 30,
+              color: 'gray',
               font: {
                 size: 15
               },
@@ -59,6 +76,9 @@ export class ProgressPresentationComponent implements OnInit {
           x: {
             grid: {
               display: false,
+            },
+            border: {
+              display: false
             },
             ticks: {
               display: false,
@@ -72,9 +92,11 @@ export class ProgressPresentationComponent implements OnInit {
           }
         }
       },
+      plugins: [labelsMargin]
     });
+   
   }
-
+  
 };
 
 

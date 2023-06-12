@@ -1,6 +1,6 @@
-<aside class="bg-black d-flex flex-column h-100 ">
+<aside class="bg-black-color d-flex flex-column h-100  border-end border-secondary" >
     <div class="aside-header border-bottom border-secondary d-flex justify-content-center align-items-center p-3">
-        <div class="border text-secondary rounded-circle p-1 mt-1  text-white">PM</div>
+        <div class="border text-secondary rounded-circle p-1 mt-1">PM</div>
     </div>
     <div class="navbar flex-grow-1 d-flex flex-column align-items-center justify-content-between">
         <div class="first-section d-flex flex-column align-items-center  w-100 ">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="d-flex flex-column align-items-center ">
-            <div class="nav-item icon-sun fs-4 text-secondary mb-5 cursor-pointer"></div>
+            <div class="nav-item fs-4 text-secondary mb-5 cursor-pointer" (click)="toggleTheme()" [ngClass]=" isDarkMode ? 'icon-sun-fill' : 'icon-sun1'"></div>
             <div class="nav-item icon-add fs-4 text-secondary mb-5 cursor-pointer"></div>
             <div class="nav-item icon-help fs-4 text-secondary mb-5 cursor-pointer"></div>
             <div class="profile-image rounded-circle overflow-hidden cursor-pointer">

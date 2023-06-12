@@ -22,8 +22,8 @@ export class WorkloadPresentationComponent {
         };
       },
     };
-    const progressChart = document.getElementById('workload') as HTMLCanvasElement;
-    this.chart = new Chart(progressChart, {
+    const workLoadChart = document.getElementById('workload') as HTMLCanvasElement;
+    this.chart = new Chart(workLoadChart, {
       type: 'bar',
       data: {
         labels: ["Mike", "Jennifer", "Brandon", "sam", "George"],
@@ -32,16 +32,19 @@ export class WorkloadPresentationComponent {
             label: "Completed",
             data: [4, 2, 0, 0, 0],
             backgroundColor: "#68cc6d",
+            barThickness:18
           },
           {
             label: "Remaining",
-            data: [0, 2,1 , 3, 1],
+            data: [0, 2, 1, 3, 1],
             backgroundColor: "#50cac1",
+            barThickness:18
           },
           {
             label: "Overdue",
             data: [0, 0, 0, 0, 0],
             backgroundColor: "#f0504c",
+            barThickness:18
           },
         ],
       },
@@ -49,9 +52,9 @@ export class WorkloadPresentationComponent {
         indexAxis: 'y',
         maintainAspectRatio: false,
         responsive: true,
-        bar:{
-          datasets:{
-             
+        bar: {
+          datasets: {
+
           }
         },
 
@@ -62,7 +65,6 @@ export class WorkloadPresentationComponent {
           legend: {
             align: 'start',
             labels: {
-              padding: 20,
               font: {
                 size: 14
               },
@@ -74,42 +76,41 @@ export class WorkloadPresentationComponent {
         scales: {
           x: {
             max: 8,
-            stacked:true,
+            stacked: true,
             grid: {
               display: true,
-              color:'hsl(229.41deg 20.48% 16.27%)'
+              color: 'hsl(229.41deg 20.48% 16.27%)'
             },
             ticks: {
               stepSize: 2,
-              color:'white',
+              color: 'gray',
             }
-          
           },
           y: {
-            stacked:true,
+            stacked: true,
             grid: {
               display: false,
             },
             ticks: {
               crossAlign: 'far',
               padding: 30,
-              color: 'white',
+              color: 'gray',
               font: {
                 size: 15
               },
             }
           },
-         
         },
         layout: {
           padding: {
-            left:40,
-            top: 30,
-            right: 40,
+            top:20,
+            bottom:60,
+            left:20,
+            right:20
           }
         }
       },
-      plugins:[legendMargin]
+      plugins: [legendMargin]
     });
   }
 

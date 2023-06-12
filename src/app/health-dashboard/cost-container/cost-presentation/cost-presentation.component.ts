@@ -22,8 +22,8 @@ export class CostPresentationComponent implements OnInit {
         };
       },
     };
-    const progressChart = document.getElementById('cost') as HTMLCanvasElement;
-    this.chart = new Chart(progressChart, {
+    const costChart = document.getElementById('cost') as HTMLCanvasElement;
+    this.chart = new Chart(costChart, {
       type: 'bar',
       data: {
         labels: [''],
@@ -59,7 +59,7 @@ export class CostPresentationComponent implements OnInit {
           legend: {
             align: 'start',
             labels: {
-              padding: 20,
+              // padding: 0,
               font: {
                 size: 14
               },
@@ -70,9 +70,8 @@ export class CostPresentationComponent implements OnInit {
         },
         layout: {
           padding: {
-            left: 40,
-            top: 30,
-            right: 20,
+           bottom:40,
+           top:20
           }
         },
         elements:{
@@ -94,7 +93,7 @@ export class CostPresentationComponent implements OnInit {
                 }
               },
               stepSize: 1.5,
-              color: 'white',
+              color: 'gray',
               font: {
                 size: 15,
               },
