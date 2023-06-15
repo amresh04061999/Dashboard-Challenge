@@ -1,0 +1,16 @@
+aside {
+    .aside-header {
+        height: 60px;
+    }
+
+    .profile-image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar {
+        .nav-item:hover {
+            color: hsl(69.66deg 97.39% 70%) !important;
+        }
+    }
+}

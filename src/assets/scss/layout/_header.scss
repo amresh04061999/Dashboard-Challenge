@@ -1,0 +1,50 @@
+header {
+  height: 60px;
+
+  .row {
+    .heading {
+      font-size: 25px;
+
+      @media (max-width: 1200px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 15px;
+        margin-top: 20px;
+      }
+    }
+    .profile-image {
+      width: 50px;
+      height: 50px;
+
+      @media (max-width: 576px) {
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+      }
+    }
+    .profile2 {
+      margin-left: -15px;
+    }
+
+    .navbar {
+      .nav-item:not(.icon-active):hover {
+        color: hsl(69.66deg 97.39% 70%) !important;
+      }
+
+      .icon-active {
+        padding: 15px;
+        border: 2px solid hsl(69.66deg 97.39% 70%);
+      }
+    }
+  }
+}

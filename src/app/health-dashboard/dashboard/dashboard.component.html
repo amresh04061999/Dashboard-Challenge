@@ -1,0 +1,39 @@
+<main class="h-100 overflow-auto">
+    <div class="row g-0">
+        <div class="col-12 col-sm-6 col-lg-4 border-end border-bottom border-secondary gx-0">
+            <app-card title="Health" [fullScreen]="false" [setting]="false">
+                <app-health-container> </app-health-container>
+            </app-card>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-lg-4 border-end border-bottom border-secondary">
+            <app-card title="Tasks" [fullScreen]="true" [setting]="true" [tableShow]="false">
+                <app-tasks-container></app-tasks-container>
+            </app-card>
+
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 border-end border-bottom border-secondary">
+            <app-card title="Progress" [fullScreen]="true" [setting]="true" [tableShow]="false">
+                <app-progress-container> </app-progress-container>
+            </app-card>
+
+        </div>
+        <div class="col-12  col-sm-6 col-lg-4 border-end border-bottom border-secondary">
+            <app-card title="Time" [fullScreen]="true" [setting]="true" [tableShow]="false">
+                <app-time-container></app-time-container>
+            </app-card>
+
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 border-end border-bottom border-secondary">
+            <app-card title="Cost" [fullScreen]="true" [setting]="true" [tableShow]="false">
+                <app-cost-container></app-cost-container>
+            </app-card>
+
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 border-end border-bottom border-secondary">
+            <app-card title="WorkLoad" [fullScreen]="true" [setting]="true" [tableShow]="false">
+                <app-workload-container></app-workload-container>
+            </app-card>
+
+        </div>
+    </div>
+</main>
