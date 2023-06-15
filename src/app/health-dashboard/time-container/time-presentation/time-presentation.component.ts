@@ -12,6 +12,10 @@ export class TimePresentationComponent {
   constructor() {
   }
   ngOnInit(): void {
+   this.timeChart();
+  }
+// Time chart
+  public timeChart():void{
     const legendMargin = {
       id: "increase-legend-spacing",
       beforeInit(chart: any) {
@@ -41,7 +45,7 @@ export class TimePresentationComponent {
                     }
                     ctx.textAlign = "right";
                     ctx.textBaseline = "middle";
-                    ctx.fillText(dataPoint + "%", width / 2 + 135, y);
+                    ctx.fillText(dataPoint + "%", width / 2 + 130, y);
                   }
                 }
               });

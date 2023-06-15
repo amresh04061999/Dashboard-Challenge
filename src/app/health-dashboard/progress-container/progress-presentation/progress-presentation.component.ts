@@ -15,6 +15,10 @@ export class ProgressPresentationComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.progressChart()
+  }
+  // progress chart
+  public progressChart():void{
     const labelsMargin = {
       id: 'labelMargin',
       afterDatasetsDraw(chart: any) {
@@ -28,7 +32,7 @@ export class ProgressPresentationComponent implements OnInit {
           if (dataPoint > 0 && dataPoint < 1) {
             dataPoint = 0;
           }
-          ctx.fillText(dataPoint + "%", 150, y);
+          ctx.fillText(dataPoint + "%",138, y);
         });
       },
     }

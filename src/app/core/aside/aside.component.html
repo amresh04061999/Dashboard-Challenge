@@ -1,26 +1,43 @@
-<aside class="bg-black-color d-flex flex-column h-100  border-end border-secondary" >
+<!-- aside start -->
+<aside class="bg-black-color d-flex flex-column h-100  border-end border-secondary">
     <div class="aside-header border-bottom border-secondary d-flex justify-content-center align-items-center p-3">
         <div class="border text-secondary rounded-circle p-1 mt-1">PM</div>
     </div>
     <div class="navbar flex-grow-1 d-flex flex-column align-items-center justify-content-between">
         <div class="first-section d-flex flex-column align-items-center  w-100 ">
             <div class="border-bottom border-secondary d-flex flex-column align-items-center w-100 my-3 pb-4 ">
-                <div class="nav-item icon-home fs-4 text-secondary mb-5 cursor-pointer"></div>
+                <div class="nav-item icon-home fs-4 text-secondary mb-4 cursor-pointer"></div>
                 <div class="nav-item icon-clock fs-4 text-secondary cursor-pointer"></div>
             </div>
-            <div class=" my-3">
-                <div class="nav-item icon-users fs-4 text-secondary mb-5 cursor-pointer"></div>
+            <div class=" my-1">
+                <div class="nav-item icon-users fs-4 text-secondary mb-4 cursor-pointer"></div>
                 <div class="nav-item icon-business fs-4 text-secondary cursor-pointer"></div>
             </div>
         </div>
+        <!--  header -->
+        <div class="d-flex flex-column align-items-center d-md-none ">
+            <div class="navbar p-0 text-white d-flex  flex-column mt-4">
+                <div class="nav-item icon-chart-1 fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class="nav-item icon-chart-5 fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class=" nav-item icon-chart-2 fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class="nav-item icon-chart-3 fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class="nav-item icon-active icon-chart-4   fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class="nav-item icon-calendar fs-4 text-secondary cursor-pointer  mt-4"></div>
+                <div class="nav-item icon-file-earmark fs-4 text-secondary cursor-pointer my-4"></div>
+            </div>
+        </div>
+        <!-- end header -->
         <div class="d-flex flex-column align-items-center ">
-            <div class="nav-item fs-4 text-secondary mb-5 cursor-pointer" (click)="toggleTheme()" [ngClass]=" isDarkMode ? 'icon-sun-fill' : 'icon-sun1'"></div>
-            <div class="nav-item icon-add fs-4 text-secondary mb-5 cursor-pointer"></div>
-            <div class="nav-item icon-help fs-4 text-secondary mb-5 cursor-pointer"></div>
+            <div class="nav-item fs-4 text-secondary my-4 cursor-pointer" (click)="toggleTheme()"
+                [ngClass]=" isDarkMode ? 'icon-sun-fill' : 'icon-sun1'"></div>
+            <div class="nav-item icon-add fs-4 text-secondary mb-4 cursor-pointer"></div>
+            <div class="nav-item icon-help fs-4 text-secondary mb-4 cursor-pointer"></div>
             <div class="profile-image rounded-circle overflow-hidden cursor-pointer">
                 <img src="./../../../assets/images/icon-5404125_1280.webp" alt="profileImage" class="w-100"
                     height="auto">
             </div>
         </div>
+
     </div>
 </aside>
+<!-- end aside -->

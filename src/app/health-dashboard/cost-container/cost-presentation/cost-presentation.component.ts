@@ -7,11 +7,15 @@ import { Chart, scales } from 'chart.js';
   styleUrls: ['./cost-presentation.component.scss']
 })
 export class CostPresentationComponent implements OnInit {
-  @ViewChild('tasks') tasks!: ElementRef
-  private chart!: any;
+
+  private chart!: Chart;
   constructor() {
   }
   ngOnInit(): void {
+    this.costChart()
+  }
+  // cost chart
+  public costChart(){
     const legendMargin = {
       id: "increase-legend-spacing",
       beforeInit(chart: any) {
@@ -70,18 +74,18 @@ export class CostPresentationComponent implements OnInit {
         },
         layout: {
           padding: {
-           bottom:40,
-           top:20
+            bottom: 40,
+            top: 20
           }
         },
-        elements:{
-              bar:{
-                borderWidth:{
-                  left:3,
-                  right:3
-                }
-              }
-           },
+        elements: {
+          bar: {
+            borderWidth: {
+              left: 3,
+              right: 3
+            }
+          }
+        },
         scales: {
           y: {
             ticks: {
@@ -100,7 +104,7 @@ export class CostPresentationComponent implements OnInit {
               padding: 20,
             },
             grid: {
-              color:'hsl(229.41deg 20.48% 16.27%)',
+              color: 'hsl(229.41deg 20.48% 16.27%)',
               lineWidth: 1.5,
             },
             border: {
@@ -116,5 +120,6 @@ export class CostPresentationComponent implements OnInit {
       },
       plugins: [legendMargin]
     });
+  
   }
 }

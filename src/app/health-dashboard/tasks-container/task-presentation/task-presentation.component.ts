@@ -14,13 +14,9 @@ export class TaskPresentationComponent implements OnInit {
   }
   ngOnInit(): void {
     this.tasksCreated();
-    this.updateChartSize();
   }
-  @HostListener('window:resize')
-  onWindowResize() {
-    this.updateChartSize();
-  }
-  public tasksCreated() {
+  // Tasks chart
+  public tasksCreated() :void{
     Chart.register(ChartDataLabels);
     const legendMargin = {
       id: "increase-legend-spacing",
@@ -93,17 +89,5 @@ export class TaskPresentationComponent implements OnInit {
       } ,
       plugins: [legendMargin]
     });
-  }
-  updateChartSize() {
-    const canvas = this.tasks.nativeElement;
-    const parentElement = canvas.parentElement;
-
-    const parentWidth = parentElement.clientWidth;
-    const parentHeight = parentElement.clientHeight;
-
-    canvas.width = parentWidth;
-    canvas.height = parentHeight;
-
-    this.chart.resize();
   }
 }

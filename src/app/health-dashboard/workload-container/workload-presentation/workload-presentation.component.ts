@@ -12,13 +12,17 @@ export class WorkloadPresentationComponent {
   constructor() {
   }
   ngOnInit(): void {
+    this.workloadChart()
+  }
+  // WorkLoad Chart
+   public workloadChart():void{
     const legendMargin = {
       id: "increase-legend-spacing",
       beforeInit(chart: any) {
-        const Fit = chart.legend.fit;
-        chart.legend.fit = function fit() {
-          Fit.bind(chart.legend)();
-          this.height += 30;
+           const Fit = chart.legend.fit;
+           chart.legend.fit = function fit() {
+           Fit.bind(chart.legend)();
+           this.height += 30;
         };
       },
     };
@@ -57,7 +61,6 @@ export class WorkloadPresentationComponent {
 
           }
         },
-
         plugins: {
           datalabels: {
             display: false,
@@ -112,6 +115,5 @@ export class WorkloadPresentationComponent {
       },
       plugins: [legendMargin]
     });
-  }
-
+   }
 }
