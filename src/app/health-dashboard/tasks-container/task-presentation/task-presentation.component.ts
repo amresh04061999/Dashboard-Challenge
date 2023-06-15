@@ -44,7 +44,7 @@ export class TaskPresentationComponent implements OnInit {
         ],
       },
       options: {
-        cutout: 80,
+        cutout: '80%',
         spacing: 3,
         maintainAspectRatio: false,
         responsive: true,

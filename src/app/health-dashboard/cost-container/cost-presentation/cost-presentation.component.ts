@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Chart, scales } from 'chart.js';
 
 @Component({
@@ -6,13 +6,19 @@ import { Chart, scales } from 'chart.js';
   templateUrl: './cost-presentation.component.html',
   styleUrls: ['./cost-presentation.component.scss']
 })
-export class CostPresentationComponent implements OnInit {
+export class CostPresentationComponent implements OnInit ,OnDestroy  {
 
-  private chart!: Chart;
+  private chart!: any;
   constructor() {
   }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.refreshChart() 
+  }
   ngOnInit(): void {
-    this.costChart()
+    this.costChart();
+    this.refreshChart() 
   }
   // cost chart
   public costChart(){
@@ -122,4 +128,22 @@ export class CostPresentationComponent implements OnInit {
     });
   
   }
+  public updateChartSize() {
+    const canvas = document.getElementById('cost') as HTMLCanvasElement;
+    console.log(canvas);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Update the chart layout and redraw
+    this.chart.resize();
+    this.chart.update();
+    
+  }
+  refreshChart() {
+    this.updateChartSize();
+  }
+  ngOnDestroy(): void {
+    // this.destroyChart();
+  }
+ 
 }
